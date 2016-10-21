@@ -1,0 +1,9 @@
+title: Jekyll Typescript Webpack
+
+markdown: kramdown
+
+exclude: ['sass', 'src', 'scripts', 'node_modules', 'Gemfile*', '*.json', '*.js', 'README.md', 'webpack']
+
+keep_files: ['fonts', 'app']
+
+environment: development

@@ -1,0 +1,19 @@
+<script>
+  // Development: reload css on hot update
+  (function(){
+    var filename = 'app.css';
+    window.addEventListener('message', function (e) {
+      console.log('message:', e.data);
+      if (e.data.search('webpackHotUpdate') === -1) return;
+      var links = document.getElementsByTagName('link');
+      for (var i = 0; i < links.length; i++) {
+        var link = links[i];
+        if (link.href.search(filename) !== -1) {
+          var linkHref = link.href;
+          link.href = 'about:blank';
+          link.href = linkHref;
+        }
+      }
+    }, false);
+  })();
+</script>

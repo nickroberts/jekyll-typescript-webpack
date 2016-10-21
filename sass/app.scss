@@ -1,0 +1,9 @@
+@import '~foundation-sites/scss/foundation';
+@include foundation-everything;
+
+@import 'variables';
+
+// Start of our styles
+body, h1, h2, h3, h4, h5, h6 {
+  font-family: $hurley-font-family;
+}

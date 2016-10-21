@@ -1,0 +1,10 @@
+<script src="{{ "/app/vendor.js" | prepend: site.baseurl }}"></script>
+<script src="{{ "/app/app.js" | prepend: site.baseurl }}"></script>
+
+{% if site.environment == 'production' %}
+  {% include analytics.html %}
+{% endif %}
+
+{% if site.environment == 'development' %}
+  {% include hot.html %}
+{% endif %}
