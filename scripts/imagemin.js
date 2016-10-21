@@ -9,5 +9,5 @@ imagemin(['images/*.{jpg,png}'], '_site/images', {
     imageminPngquant()
   ]
 }).then(files => {
-  logger.log(`Optimized ${files.length} image${files.length === 1 ? '' : 's'}.`);
+  logger.info(`Optimized ${files.length} image${files.length === 1 ? '' : 's'}.`);
 });
