@@ -7,8 +7,12 @@
     "start": "concurrently 'jekyll build --watch' 'webpack-dev-server --config webpack/webpack.dev.config.js'",
     "test": "echo \"Error: no test specified\" && exit 1",
     "imagemin": "node ./scripts/imagemin",
+    "build": "node ./scripts/build",
     "build:gh-pages": "jekyll build --config _config.yml,_config.gh-pages.yml && webpack --config webpack/webpack.prod.config.js && npm run imagemin",
-    "deploy:gh-pages": "node ./scripts/gh-pages"
+    "build:prod": "jekyll build --config _config.yml,_config.production.yml && webpack --config webpack/webpack.prod.config.js && npm run imagemin",
+    "deploy": "node ./scripts/deploy",
+    "deploy:gh-pages": "node ./scripts/gh-pages",
+    "deploy:prod": "node ./scripts/production"
   },
   "author": "",
   "license": "ISC",

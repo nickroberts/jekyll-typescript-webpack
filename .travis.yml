@@ -10,15 +10,5 @@ cache:
 before_script:
   - nvm install v6.7.0
   - npm i
-build:
-  - provider: script
-    skip_cleanup: true
-    script: npm run build:gh-pages
-    on:
-      branch: master
-deploy:
-  - provider: script
-    skip_cleanup: true
-    script: npm run deploy:gh-pages
-    on:
-      branch: master
+script: npm run build
+deploy: npm run deploy

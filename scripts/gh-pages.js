@@ -1,5 +1,4 @@
 const ghpages = require('gh-pages');
-const path = require('path');
 const logger = require('./logger');
 
 logger.info('Deploying to gh-pages.');
