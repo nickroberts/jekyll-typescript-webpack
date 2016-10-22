@@ -1,4 +1,4 @@
-# Jekyll Typescript Webpack
+# Jekyll Typescript Webpack ![build status](https://img.shields.io/travis/nickroberts/jekyll-typescript-webpack.svg)
 
 Starter app for jekyll with typescript and webpack.
 
