@@ -5,7 +5,7 @@ rvm:
 cache:
   bundler: true
   directories:
-    - $(npm config get prefix)/bin
+    - "$(npm config get prefix)/bin"
     - node_modules
 before_script:
   - nvm install v6.7.0
@@ -15,3 +15,6 @@ deploy:
   - provider: script
     skip_cleanup: true
     script: npm run deploy
+env:
+  global:
+    secure: Fc08JTX+U0ZHCVq8rEhsnqbJeUZO5vV3tiaW4v6HBm6nQn4Sy0kN2cLU29P1nK5+T64UPcgZV4QcWEI2bmTbD4AlQZfLtE9afkC6/kIEaeYWOIk0mJXmtJ2Ndq5d3m/eYWmtB848PGzYssq+b/zijBlFo+BkAaoWmCq0Q8ri3qNlbP/cl7N8tIAvFe2803KO5O4gYVW732Wu8tng3DqJFN04g28KsC04HWktBzdPR4CU1VlAy+AEmH3ysp7RchCfhn2TdL7gsMhOybI9wbQnNDIPmJToBkZ+UAKlE69+2XpdfhwOewJ+HeiZG/S5IsfSEvzdXja1DBh3WtsCNzIR9Wss7sqKDusTYHGKbN/X2HxmRZFMYxlAAqlhaRFESjyiKF7HiZinxoJolkql6XSWFthDpNYDZbXo5rDkv8bogA3b3r3n4w5Y/chppeQuxAyRCN5k5b8crwZ80ZQl9nDprewlzfEuVIbPaHYJvlC6bfnoPqwpYzDvMz9icv8bwzdt/UhWZibBgmvNqJE5VDIxmp7W+laXeXI41leMNsqKwMMV3DMvP/wiJIIGWTGjBV2XnjhdJioxOTRwCO/gWkn4DJXSQ3OEnlRIUKkvfY4ryd+sgsJcf+QEpLrT8oivSjk58Cvtxeqy8t0aMpJXU+6jNVaVs6lbY/xkxiiUH6B621Q=
