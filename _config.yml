@@ -2,7 +2,7 @@ title: Jekyll Typescript Webpack
 
 markdown: kramdown
 
-exclude: ['sass', 'src', 'scripts', 'node_modules', 'Gemfile*', '*.json', '*.js', 'README.md', 'webpack', '*.log']
+exclude: ['sass', 'src', 'scripts', 'node_modules', 'Gemfile*', '*.json', '*.js', 'README.md', 'webpack', '*.log', 'vendor']
 
 keep_files: ['fonts', 'app']
 
