@@ -7,12 +7,16 @@ cache:
   directories:
   - "$(npm config get prefix)/bin"
   - node_modules
+before_script:
+    - nvm install v6.7.0
 script: npm run build
 deploy:
   provider: releases
   api_key:
     secure: a96ViOxwkydlR4U1J+kc2X++LIgFB0FcuwnjQPTEZomSpNSRstxw5vsh97+vsUUZA+DywtGkE1HCm3q3hm3XpnXpofBRTolkny11vP0+ppYnunspsDz4Omo4g5siaFdryXket+bWSjfCXjWF2Dn361coE7e5IB82l/YHP6Ut4zs+71nwt/vQd7GQwOse+TVd2BrmyY4SmHz4tfiY0KbG3vIKA4JRnwe8fjmEJZtKoboOhVG2Cp6/Lb5h7mLiH0GA+Zd6WjPvrsvzPzL3/m0edBb+vMSQ1vZ237F1gOnkdu2GBMMl7wK+LgEPSZBhR0ZdDeCdOZbttFzACJ7jA6+94B02m2KXSiMSeusGSVyLNCldAtPyKNxjIAc40gl1/UM1/5xTl0n+q6jmTPjvqHUrlYvukRkkU5FFRX+Iv3Xc3v6JmiDpCF/1F8+c42/cnBqeIPuqcWba3n1U3t+wMe/TS4JPhFJEnhBEsMu0pgO2rTVkJw8S5rGF6pb1NkUrA4OMMm9rXRT25OUPrBo29G9y5yik56207F8Z7QeHIB46T4/R3DDXeuySv8AfWYeL13enSmx/t55vpG4Qg0UmJuAG/tcLJfY9Zk0rZ7rV2M6R/9+VRI54XKVuRNeGLe4QTGHOH5U3H3w2l6CLLmJK9oVboXBvAL3ahzb9vZ+efwOONoE=
   file: _site/**/*
+  skip_cleanup: true
+  overwrite: true
   on:
     repo: nickroberts/jekyll-typescript-webpack
     branch: master
