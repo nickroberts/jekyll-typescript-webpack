@@ -1,20 +1,21 @@
 sudo: false
 language: ruby
 rvm:
-  - 2.2
+- 2.2
 cache:
   bundler: true
   directories:
-    - "$(npm config get prefix)/bin"
-    - node_modules
-before_script:
-  - nvm install v6.7.0
-  - npm i
+  - "$(npm config get prefix)/bin"
+  - node_modules
 script: npm run build
 deploy:
-  - provider: script
-    skip_cleanup: true
-    script: npm run deploy
+  provider: releases
+  api_key:
+    secure: a96ViOxwkydlR4U1J+kc2X++LIgFB0FcuwnjQPTEZomSpNSRstxw5vsh97+vsUUZA+DywtGkE1HCm3q3hm3XpnXpofBRTolkny11vP0+ppYnunspsDz4Omo4g5siaFdryXket+bWSjfCXjWF2Dn361coE7e5IB82l/YHP6Ut4zs+71nwt/vQd7GQwOse+TVd2BrmyY4SmHz4tfiY0KbG3vIKA4JRnwe8fjmEJZtKoboOhVG2Cp6/Lb5h7mLiH0GA+Zd6WjPvrsvzPzL3/m0edBb+vMSQ1vZ237F1gOnkdu2GBMMl7wK+LgEPSZBhR0ZdDeCdOZbttFzACJ7jA6+94B02m2KXSiMSeusGSVyLNCldAtPyKNxjIAc40gl1/UM1/5xTl0n+q6jmTPjvqHUrlYvukRkkU5FFRX+Iv3Xc3v6JmiDpCF/1F8+c42/cnBqeIPuqcWba3n1U3t+wMe/TS4JPhFJEnhBEsMu0pgO2rTVkJw8S5rGF6pb1NkUrA4OMMm9rXRT25OUPrBo29G9y5yik56207F8Z7QeHIB46T4/R3DDXeuySv8AfWYeL13enSmx/t55vpG4Qg0UmJuAG/tcLJfY9Zk0rZ7rV2M6R/9+VRI54XKVuRNeGLe4QTGHOH5U3H3w2l6CLLmJK9oVboXBvAL3ahzb9vZ+efwOONoE=
+  file: _site/**/*
+  on:
+    repo: nickroberts/jekyll-typescript-webpack
+    branch: master
 env:
   global:
     secure: Fc08JTX+U0ZHCVq8rEhsnqbJeUZO5vV3tiaW4v6HBm6nQn4Sy0kN2cLU29P1nK5+T64UPcgZV4QcWEI2bmTbD4AlQZfLtE9afkC6/kIEaeYWOIk0mJXmtJ2Ndq5d3m/eYWmtB848PGzYssq+b/zijBlFo+BkAaoWmCq0Q8ri3qNlbP/cl7N8tIAvFe2803KO5O4gYVW732Wu8tng3DqJFN04g28KsC04HWktBzdPR4CU1VlAy+AEmH3ysp7RchCfhn2TdL7gsMhOybI9wbQnNDIPmJToBkZ+UAKlE69+2XpdfhwOewJ+HeiZG/S5IsfSEvzdXja1DBh3WtsCNzIR9Wss7sqKDusTYHGKbN/X2HxmRZFMYxlAAqlhaRFESjyiKF7HiZinxoJolkql6XSWFthDpNYDZbXo5rDkv8bogA3b3r3n4w5Y/chppeQuxAyRCN5k5b8crwZ80ZQl9nDprewlzfEuVIbPaHYJvlC6bfnoPqwpYzDvMz9icv8bwzdt/UhWZibBgmvNqJE5VDIxmp7W+laXeXI41leMNsqKwMMV3DMvP/wiJIIGWTGjBV2XnjhdJioxOTRwCO/gWkn4DJXSQ3OEnlRIUKkvfY4ryd+sgsJcf+QEpLrT8oivSjk58Cvtxeqy8t0aMpJXU+6jNVaVs6lbY/xkxiiUH6B621Q=
