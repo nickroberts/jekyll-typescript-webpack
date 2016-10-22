@@ -5,8 +5,8 @@ logger.info('Deploying to gh-pages.');
 if (env.TRAVIS_BRANCH === 'master') {
   const execSync = require("child_process").execSync;
   let command = 'cd _site && ' +
-    'git config user.name 'Travis CI' && ' +
-    'git config user.email 'nobody@nobody.org' && ' +
+    'git config user.name "Travis CI" && ' +
+    'git config user.email "nobody@nobody.org" && ' +
     'git init && ' +
     'git add . && ' +
     'git commit -m "Travis is pushing it...pushing it real good" && ' +
