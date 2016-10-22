@@ -6,8 +6,7 @@ let options = {
   entry: {
     app: './src/index',
     vendor: [
-      'foundation-sites',
-      'algoliasearch'
+      'foundation-sites'
     ]
   },
 
@@ -46,8 +45,7 @@ let options = {
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
-      'window.jQuery': 'jquery',
-      algoliasearch: 'algoliasearch'
+      'window.jQuery': 'jquery'
     }),
     new extractTextPlugin({ filename: '[name].css', allChunks: true }),
     new webpack.LoaderOptionsPlugin({
