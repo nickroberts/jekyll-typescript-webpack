@@ -10,7 +10,7 @@ if (env.TRAVIS_BRANCH === 'master') {
   git init && \
   git add . && \
   git commit -m "Travis is pushing it...pushing it real good" && \
-  git push --force --quiet "https://${GITHUB_TOKEN}@$github.com/jekyll-typescript-webpack.git" master:gh-pages`;
+  git push --force --quiet "https://` + env.GITHUB_TOKEN + `@github.com/jekyll-typescript-webpack.git" master:gh-pages`;
   execSync(command, {
     env: env,
     stdio: 'inherit'
