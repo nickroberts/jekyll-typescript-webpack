@@ -6,7 +6,7 @@ let user;
 if (env.TRAVIS_BRANCH) {
   user = {
     name: 'Travis CI',
-    email: 'deploy@travisci.org'
+    email: 'deploy@travis-ci.org'
   };
 }
 
