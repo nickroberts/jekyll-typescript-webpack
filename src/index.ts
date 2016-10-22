@@ -2,6 +2,7 @@ import '../sass/app.scss';
 
 class App {
   constructor() {
+    console.debug('App loaded...');
     $(document).ready(() => $(document).foundation());
   }
 }
