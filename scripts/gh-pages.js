@@ -1,8 +1,19 @@
+const env = process.env;
 const ghpages = require('gh-pages');
 const logger = require('./logger');
 
+let user;
+if (env.TRAVIS_BRANCH) {
+  user = {
+    name: 'Travis CI',
+    email: 'deploy@travisci.org'
+  };
+}
+
 logger.info('Deploying to gh-pages.');
-ghpages.publish('_site', (err) => {
+ghpages.publish('_site', {
+  user: user
+}, (err) => {
   if (err) {
     logger.error('There was an error deploying to gh-pages.', err);
   } else {
