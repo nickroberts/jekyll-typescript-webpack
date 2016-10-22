@@ -7,8 +7,8 @@
     "start": "concurrently 'jekyll build --watch' 'webpack-dev-server --config webpack/webpack.dev.config.js'",
     "test": "echo \"Error: no test specified\" && exit 1",
     "imagemin": "node ./scripts/imagemin",
-    "build": "jekyll build && webpack --config webpack/webpack.prod.config.js && npm run imagemin",
-    "deploy": "echo 'Deploy to gh-pages!'"
+    "build:staging": "jekyll build --config _config.yml,_config.staging.yml && webpack --config webpack/webpack.prod.config.js && npm run imagemin",
+    "deploy:staging": "node ./scripts/gh-pages"
   },
   "author": "",
   "license": "ISC",
@@ -21,6 +21,7 @@
     "css-loader": "^0.25.0",
     "extract-text-webpack-plugin": "^2.0.0-beta.4",
     "foundation-sites": "^6.2.4",
+    "gh-pages": "^0.11.0",
     "image-webpack-loader": "^3.0.0",
     "imagemin": "^5.2.2",
     "imagemin-mozjpeg": "^6.0.0",

@@ -10,10 +10,10 @@ cache:
 before_script:
   - nvm install v6.7.0
   - npm i
-script: npm run build
+script: npm run build:staging
 deploy:
   - provider: script
     skip_cleanup: true
-    script: npm run deploy
+    script: npm run deploy:staging
     on:
       branch: master
