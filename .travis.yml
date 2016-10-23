@@ -9,6 +9,7 @@ cache:
   - node_modules
 before_script:
     - nvm install v6.7.0
+    - npm i
 script: npm run build
 deploy:
   - provider: releases
