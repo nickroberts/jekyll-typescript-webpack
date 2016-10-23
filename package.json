@@ -17,8 +17,7 @@
     "build:gh-pages": "npm run jekyll:build:gh-pages && npm run webpack && npm run imagemin",
     "build:prod": "npm run jekyll:build:prod && npm run webpack && npm run imagemin",
     "deploy": "node ./scripts/deploy",
-    "deploy:gh-pages": "node ./scripts/gh-pages",
-    "deploy:prod": "node ./scripts/production"
+    "gh-pages": "node ./scripts/gh-pages"
   },
   "author": "",
   "license": "ISC",
