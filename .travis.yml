@@ -18,7 +18,7 @@ deploy:
       tags: true
   - provider: script
     skip_cleanup: true
-    script: ./scripts/gh-pages.sh
+    script: ./scripts/deploy.sh
     on:
       branch: master
 env:
