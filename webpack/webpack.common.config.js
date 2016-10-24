@@ -19,6 +19,8 @@ let options = {
     extensions: ['.ts', '.js']
   },
 
+  devtool: 'source-map',
+
   module: {
     loaders: [
       {
@@ -30,15 +32,12 @@ let options = {
         loader: extractTextPlugin.extract({
           loader: [
             { loader: 'css-loader', query: { sourceMap: true } },
-            { loader: 'postcss-loader' },
             { loader: 'sass-loader', query: { sourceMap: true } }
           ]
         })
       }
     ]
   },
-
-  devtool: false,
 
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.js' }),
@@ -47,19 +46,7 @@ let options = {
       jQuery: 'jquery',
       'window.jQuery': 'jquery'
     }),
-    new extractTextPlugin({ filename: '[name].css', allChunks: true }),
-    new webpack.LoaderOptionsPlugin({
-      options: {
-        context: __dirname,
-        postcss: [
-          require('autoprefixer')({ browsers: ['last 2 versions'] }),
-          require('cssnano')({
-            discardComments: { removeAll: true },
-            sourcemap: true
-          })
-        ]
-      }
-    })
+    new extractTextPlugin({ filename: '[name].css', allChunks: true })
   ]
 
 };
