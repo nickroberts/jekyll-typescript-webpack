@@ -1,0 +1,31 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ site.title }}</title>
+  </head>
+  <body>
+    {% if jekyll.environment == "production" %}
+      {% include analytics.html %}
+    {% endif %}
+
+    <div class="off-canvas-wrapper">
+      {% include off-canvas-left.html %}
+      <div class="off-canvas-content" data-off-canvas-content>
+        <div class="content">
+          {% include header.html %}
+          <div class="grid-container">
+            <div class="grid-x grid-margin-x">
+              <div class="cell">{{ content }}</div>
+            </div>
+          </div>
+        </div>
+        {% include footer.html %}
+      </div>
+    </div>
+  </body>
+</html>
+
+

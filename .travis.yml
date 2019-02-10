@@ -1,0 +1,32 @@
+language: ruby
+
+rvm:
+  - 2.6
+
+cache:
+  bundler: true
+  directories:
+    - '$HOME/.npm'
+    - '$TRAVIS_BUILD_DIR/.cache'
+    - '$TRAVIS_BUILD_DIR/node_modules'
+
+env:
+  global:
+    - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
+
+before_script:
+  - node -v
+  - npm i
+#   - nvm install v8.5.0
+#   - npm i -g npm@5.4.2
+#   - npm i
+
+script: npm run build
+# deploy:
+#   local-dir: _site
+#   provider: pages
+#   skip-cleanup: true
+#   github-token: $GITHUB_TOKEN
+#   keep-history: true
+#   on:
+#     branch: master

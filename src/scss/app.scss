@@ -1,0 +1,19 @@
+@import 'settings/variables';
+@import 'settings/foundation';
+@import '~foundation-sites/scss/foundation';
+@include foundation-everything;
+
+@import '~motion-ui/src/motion-ui';
+@include motion-ui-transitions;
+@include motion-ui-animations;
+
+@import 'components/footer';
+@import 'components/fouc';
+
+header {
+  background: #ccc;
+}
+
+footer {
+  background: #ccc;
+}

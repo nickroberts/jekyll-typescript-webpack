@@ -1,0 +1,16 @@
+<div class="off-canvas position-left" id="offCanvasLeft" data-off-canvas>
+  <button class="close-button" aria-label="Close menu" type="button" data-close>
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <!-- Menu -->
+  <ul class="vertical menu">
+    <li>
+      <a href="/">Home</a>
+    </li>
+    {% for menuItem in site.data.menus.site %}
+    <li>
+      <a href="{{ menuItem.link }}">{{ menuItem.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>

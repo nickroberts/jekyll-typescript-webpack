@@ -1,0 +1,27 @@
+title: Site Title
+description: >-
+  Site Description.
+baseurl: ''
+url: ''
+markdown: kramdown
+permalink: /:categories/:title/
+plugins:
+  - jekyll-feed
+collections:
+  pages:
+    output: true
+    permalink: /:path/
+exclude:
+  - config
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - package.json
+  - package-lock.json
+  - README.md
+  - scripts
+  - src
+  - tsconfig.json
+  - tslint.json
+  - vendor
+  - webpack.config.js
